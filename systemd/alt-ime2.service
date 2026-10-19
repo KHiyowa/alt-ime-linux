@@ -1,0 +1,16 @@
+[Unit]
+Description=Alt-IME 2 Alt tap to Henkan/Muhenkan keyboard bridge
+PartOf=graphical-session.target
+After=graphical-session-pre.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/alt-ime2/environment
+ExecStart=/usr/bin/python3 %h/.local/lib/alt-ime2/alt_ime2.py --device ${ALT_IME_DEVICE} --double-ms 200
+Restart=on-failure
+RestartSec=2
+TimeoutStopSec=5
+
+[Install]
+WantedBy=graphical-session.target

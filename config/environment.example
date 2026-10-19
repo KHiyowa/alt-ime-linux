@@ -1,0 +1,2 @@
+# Use a stable by-id or by-path symlink, not eventN.
+ALT_IME_DEVICE=/dev/input/by-id/REPLACE-ME-event-kbd
